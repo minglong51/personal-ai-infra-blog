@@ -1,0 +1,10 @@
+{
+  "tagOwners": {
+    "tag:llm-server": ["your-email@github"],
+    "tag:llm-client": ["your-email@github"]
+  },
+  "acls": [
+    // only tagged clients can reach the Ollama port on the server
+    {"action": "accept", "src": ["tag:llm-client"], "dst": ["tag:llm-server:11434"]}
+  ]
+}
