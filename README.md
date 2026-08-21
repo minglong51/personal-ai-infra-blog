@@ -1,28 +1,45 @@
 # personal-ai-infra-blog
 
-Configs, scripts, and supporting files for my Medium series on personal AI infrastructure — the boring plumbing that turns LLMs into systems you actually rely on.
+Mirrors of my writing on personal AI infrastructure — agent fleets, deterministic LLM
+workflows, attention design, local model serving — plus the configs those posts reference.
 
-## Posts
+**My site is canonical: [minglongpan.com/writing](https://www.minglongpan.com/writing).**
+The files here are point-in-time copies. If a post has been revised, the site has the
+current version.
 
-| # | Post | Code |
+## Writing
+
+| Date | Post | Mirror |
 |---|---|---|
-| 1 | [Don't 0.0.0.0 Your Ollama](https://medium.com/[YOUR_HANDLE]/[POST_SLUG]) — A Tailscale pattern most tutorials get wrong | [`post-01-tailscale-ollama/`](./post-01-tailscale-ollama) |
-| 2 | *(Coming next: Claude→Ollama fallback routing on the agent side, with real cost numbers)* | — |
+| 2026-07-24 | [Valhalla: an attention layer for a fleet of agents](https://www.minglongpan.com/writing/valhalla-design-notes) | [`writing/valhalla-design-notes.md`](./writing/valhalla-design-notes.md) |
+| 2026-07-24 | [Persona-routed agent tooling: one stdio server, every team's capabilities](https://www.minglongpan.com/writing/mcp-resource-layering-pattern) | [`writing/mcp-resource-layering-pattern.md`](./writing/mcp-resource-layering-pattern.md) |
+| 2026-07-24 | [How I run a personal agent fleet](https://www.minglongpan.com/writing/how-i-run-a-personal-agent-fleet) | [`writing/how-i-run-a-personal-agent-fleet.md`](./writing/how-i-run-a-personal-agent-fleet.md) |
+| 2026-07-24 | [finance-os: a decision system, not a stock picker](https://www.minglongpan.com/writing/finance-os-design-notes) | [`writing/finance-os-design-notes.md`](./writing/finance-os-design-notes.md) |
+| 2026-07-20 | [Three agent frameworks converged on a control-plane protocol this month. I run my fleet on tmux and chose not to adopt it.](https://www.minglongpan.com/writing/three-agent-frameworks-converged-on-a-control-plane-protocol) | [`writing/three-agent-frameworks-converged-on-a-control-plane-protocol.md`](./writing/three-agent-frameworks-converged-on-a-control-plane-protocol.md) |
+| 2026-06-01 | [ThreadLang: a deterministic DSL for LLM workflows](https://www.minglongpan.com/writing/threadlang) | [`writing/threadlang.md`](./writing/threadlang.md) |
 
-## What's in here
+Also on Substack: [Anti-Engagement AI: Software You Can Walk Away From](https://minglong1.substack.com/p/anti-engagement-ai-software-you-can).
+
+## Configs
 
 ### `post-01-tailscale-ollama/`
 
-- **`com.minglongpan.ollama.plist`** — macOS LaunchAgent for `ollama serve`, bound to the Tailscale interface IP (not `0.0.0.0`). Drop into `~/Library/LaunchAgents/`, edit the IP and paths, then `launchctl load -w` it. The post explains why bind-to-IP matters.
-- **`tailscale-acl.json`** — minimal Tailscale ACL that scopes Ollama port `11434` to a specific device tag, for defense-in-depth inside your tailnet.
+Binding Ollama to `0.0.0.0` and installing Tailscale does not restrict it to the tailnet.
+`0.0.0.0` means every interface — home Wi-Fi, Ethernet, and whatever café network the
+laptop joins next. Binding to the Tailscale interface IP instead means the kernel only
+answers traffic that arrived over the tunnel.
 
-## Use at your own risk
+- **`com.minglongpan.ollama.plist`** — macOS LaunchAgent for `ollama serve`, bound to a
+  Tailscale IP. Edit the IP and log paths, drop it in `~/Library/LaunchAgents/`, then
+  `launchctl load -w` it. `brew services` and `.zshrc` exports both fail here: launchd
+  does not see your shell environment, so the bind silently stays on `127.0.0.1`.
+- **`tailscale-acl.json`** — a minimal ACL scoping port `11434` to a tagged device, so
+  the bind is backed by a tailnet rule as well.
 
-These are the configs I'm running, sanitized. They work on my machines. They might not on yours. Read the post, understand the pattern, then adapt rather than copy.
+Both are sanitized templates. Replace `100.x.x.x` with your own Tailscale IP
+(`tailscale ip -4`) and `/Users/me` with your home directory.
 
-## Linux equivalent
-
-The bind pattern works the same on Linux — replace the LaunchAgent with a systemd drop-in:
+On Linux the same pattern works through a systemd drop-in:
 
 ```
 # /etc/systemd/system/ollama.service.d/override.conf
@@ -32,11 +49,11 @@ Environment="OLLAMA_HOST=100.x.x.x:11434"
 
 Then `sudo systemctl daemon-reload && sudo systemctl restart ollama`.
 
-## Following along
+## Use at your own risk
 
-- **Medium:** [@YOUR_MEDIUM_HANDLE](https://medium.com/@YOUR_MEDIUM_HANDLE)
-- **New post roughly every 10 days.**
+These are the configs I run, sanitized. They work on my machines. Read them, understand
+the pattern, and adapt rather than copy.
 
 ## License
 
-MIT. Take it, fork it, ship it.
+MIT.
