@@ -1,7 +1,7 @@
 ---
 title: "Valhalla: an attention layer for a fleet of agents"
 date: 2026-07-24
-readingMinutes: 6
+readingMinutes: 3
 summary: The operations layer for my agent fleet — agents post only what needs a decision to one attention feed, over a shared knowledge memory. Design notes on exception-driven surfaces and the four friction laws.
 syndicate: [substack, x]
 canonical: https://www.minglongpan.com/writing/valhalla-design-notes

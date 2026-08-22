@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="ui-sans-serif,-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+  <style>
+    .bg   { fill: none; }
+    .ink  { fill: #14171c; }
+    .mute { fill: #5c6673; }
+    .card { fill: #f2f4f7; stroke: #d8dde4; }
+    .good { fill: #0f6c3d; }
+    .warn { fill: #9a5b00; }
+  </style>
+
+  <rect class="bg" width="1200" height="630"/>
+
+  <text class="ink" x="600" y="88" font-size="52" font-weight="700" text-anchor="middle">Which one did you measure?</text>
+
+  <!-- left -->
+  <rect class="card" x="56" y="150" width="490" height="300" rx="18" stroke-width="2"/>
+  <text class="mute" x="301" y="205" font-size="30" font-weight="600" text-anchor="middle">INSIDE THE LOOP</text>
+  <text class="ink"  x="301" y="285" font-size="46" font-weight="700" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">status: applied</text>
+  <text class="warn" x="301" y="355" font-size="34" text-anchor="middle">always reachable</text>
+  <text class="mute" x="301" y="405" font-size="30" text-anchor="middle">nothing outside changed</text>
+
+  <text class="ink" x="600" y="320" font-size="76" font-weight="700" text-anchor="middle">≠</text>
+
+  <!-- right -->
+  <rect class="card" x="654" y="150" width="490" height="300" rx="18" stroke-width="2"/>
+  <text class="mute" x="899" y="205" font-size="30" font-weight="600" text-anchor="middle">OUTSIDE THE LOOP</text>
+  <text class="ink"  x="899" y="285" font-size="46" font-weight="700" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">held-out delta</text>
+  <text class="good" x="899" y="355" font-size="34" text-anchor="middle">has to be earned</text>
+  <text class="mute" x="899" y="405" font-size="30" text-anchor="middle">the only evidence</text>
+
+  <text class="ink" x="600" y="545" font-size="34" text-anchor="middle">Can the system reach this state</text>
+  <text class="ink" x="600" y="590" font-size="34" font-weight="700" text-anchor="middle">without anything outside it changing?</text>
+</svg>

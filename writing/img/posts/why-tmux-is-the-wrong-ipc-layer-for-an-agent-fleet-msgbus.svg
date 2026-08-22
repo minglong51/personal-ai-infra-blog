@@ -1,0 +1,66 @@
+<svg id="d" width="760" height="440" viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L8 4L0 8z" fill="#5d6b79"/>
+    </marker>
+  </defs>
+  <style>
+    .lbl{font:600 13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1d2732}
+    .meta{font:500 11px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#5d6b79}
+    .kick{font:700 10px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#5d6b79;letter-spacing:1.6px}
+    .pane{fill:#fff;stroke:#e0e4e8;rx:10}
+    .wire{stroke:#5d6b79;stroke-width:1.3;fill:none;marker-end:url(#arr)}
+  </style>
+
+  <text x="40" y="42" class="kick">HOW STATE MOVES BETWEEN AGENTS TODAY</text>
+
+  <!-- agent panes, left column -->
+  <g>
+    <rect x="40" y="70" width="150" height="52" class="pane" rx="10"/>
+    <text x="62" y="92" class="lbl">agent 1</text>
+    <text x="62" y="109" class="meta">tmux pane</text>
+    <rect x="40" y="140" width="150" height="52" class="pane" rx="10"/>
+    <text x="62" y="162" class="lbl">agent 2</text>
+    <text x="62" y="179" class="meta">tmux pane</text>
+    <rect x="40" y="210" width="150" height="52" class="pane" rx="10"/>
+    <text x="62" y="232" class="lbl">agent 3</text>
+    <text x="62" y="249" class="meta">tmux pane</text>
+  </g>
+
+  <!-- agent panes, right column -->
+  <g>
+    <rect x="570" y="105" width="150" height="52" class="pane" rx="10"/>
+    <text x="592" y="127" class="lbl">agent 4</text>
+    <text x="592" y="144" class="meta">tmux pane</text>
+    <rect x="570" y="185" width="150" height="52" class="pane" rx="10"/>
+    <text x="592" y="207" class="lbl">agent 5</text>
+    <text x="592" y="224" class="meta">tmux pane</text>
+  </g>
+
+  <!-- the operator hub -->
+  <g>
+    <circle cx="380" cy="170" r="58" fill="#fff" stroke="#b5382a" stroke-width="1.6"/>
+    <text x="380" y="166" class="lbl" text-anchor="middle">the operator</text>
+    <text x="380" y="184" class="meta" text-anchor="middle">~45 msgs a day</text>
+  </g>
+
+  <!-- spokes: everything routes through the hub -->
+  <path class="wire" d="M190 96 C 260 100, 290 122, 326 143"/>
+  <path class="wire" d="M322 176 C 280 172, 240 168, 190 166" marker-end="url(#arr)"/>
+  <path class="wire" d="M190 236 C 260 232, 290 212, 328 194"/>
+  <path class="wire" d="M434 145 C 490 128, 520 128, 570 131"/>
+  <path class="wire" d="M570 211 C 520 214, 480 204, 434 188" marker-end="url(#arr)"/>
+
+  <!-- the missing wire -->
+  <path d="M190 122 C 340 60, 440 60, 570 116" stroke="#bd8272" stroke-width="1.3" stroke-dasharray="5 5" fill="none"/>
+  <g>
+    <rect x="290" y="52" width="180" height="22" rx="11" fill="#f4f6f7"/>
+    <text x="380" y="67" class="meta" text-anchor="middle" style="fill:#b5382a">no agent-to-agent channel</text>
+  </g>
+
+  <!-- caption strip -->
+  <line x1="40" y1="310" x2="720" y2="310" stroke="#e0e4e8"/>
+  <text x="40" y="340" class="lbl">Every message between agents is typed and read by a human.</text>
+  <text x="40" y="364" class="meta">No delivery ack: a swallowed command looks like a quiet agent. No liveness: idle and dead render the same pane.</text>
+  <text x="40" y="384" class="meta">Measured cost: ~40% of 812 audited messages were coordination, not decisions.</text>
+</svg>
