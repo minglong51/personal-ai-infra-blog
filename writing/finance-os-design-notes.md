@@ -38,7 +38,3 @@ A daily monitor runs the thesis-driver checks and kill-trigger watches, and push
 - Score few things well; the universe you can hold honestly is smaller than you think.
 - Log the non-actions. Your hit rate on passes is the number nobody tracks and the one that compounds.
 - LLM grading is a clerk, not an oracle — structured inputs, auditable scores, and a shadow log to check the clerk's work.
-
----
-
-*This note is the "finance-os" entry in the index of this site. The repo is private — it holds real positions and the decision trail. The design is the shareable part.*

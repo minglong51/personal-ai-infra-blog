@@ -42,7 +42,3 @@ Each law exists because its violation was observed in the wild and killed a habi
 ## What it isn't
 
 Valhalla is not a dashboard empire. The feed is intentionally sparse; most days it shows one thing or nothing. The ambition is the opposite of engagement: a system I check for thirty seconds because it only ever shows me what changed. If a feature would make me spend more time in it, that feature is a bug with good marketing.
-
----
-
-*This note is the "Valhalla" entry in the index of this site. It's private by design — the philosophy is the shareable part.*

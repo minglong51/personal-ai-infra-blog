@@ -2,7 +2,7 @@
 title: "Three agent frameworks converged on a control-plane protocol this month. I run my fleet on tmux and chose not to adopt it."
 date: 2026-07-20
 readingMinutes: 7
-summary: "why I didn't adopt the converging protocol"
+summary: "Three frameworks shipped the same control-plane idea in a month — external process control, capability negotiation, env-var hygiene. What converged, why my tmux fleet already has the failure modes it solves priced in, and the two concrete triggers that would make me adopt it."
 syndicate: []
 canonical: https://www.minglongpan.com/writing/three-agent-frameworks-converged-on-a-control-plane-protocol
 ---

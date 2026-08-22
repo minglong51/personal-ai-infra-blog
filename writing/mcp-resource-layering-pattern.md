@@ -60,7 +60,3 @@ The metric the pattern earns its keep on: **time for a new team to get a working
 - **Shared long-lived state.** stdio is deliberately stateless per process; if you need cross-process state, you want a service.
 
 The sweet spot is exactly what produced the pattern: several teams, distinct vocabularies, one protocol, and a shared agent surface that gets better without becoming a bottleneck — and whose users never have to learn its name.
-
----
-
-*This note is the design document for the "MCP resource-layering" entry in the index of this site. The implementation is internal; the pattern is the shareable part.*

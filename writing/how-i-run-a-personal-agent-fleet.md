@@ -62,7 +62,3 @@ Every one of these is a process fix, not a model fix. That's the lesson of the f
 ## The stack in one paragraph
 
 Agents live as Telegram bots with isolated state directories; jobs are markdown specs; memory is a versioned vault with read/write discipline; monitors are cron entries that write only on change; verification is headless-browser dogfooding plus test suites plus curl; secrets stay in env and never in notes. Nothing in this paragraph is a product you can buy; it's fifty small decisions that compound.
-
----
-
-*This note is the "agent fleet" entry in the index of this site. The fleet wrote the first draft of it; I edited it.*
