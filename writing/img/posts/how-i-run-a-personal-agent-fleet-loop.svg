@@ -1,0 +1,74 @@
+<svg width="1200" height="560" viewBox="0 0 1200 560" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L8 4L0 8z" fill="#6e6557"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L8 4L0 8z" fill="#b5382a"/>
+    </marker>
+  </defs>
+  <style>
+    .kick{font:700 11px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#6e6557;letter-spacing:2px}
+    .lbl{font:600 15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1a1713}
+    .meta{font:500 12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6e6557}
+    .metaR{font:600 12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#b5382a}
+    .pane{fill:#fbf8f1;stroke:#d6cfc0;stroke-width:1.4}
+    .paneR{fill:#fbf8f1;stroke:#b5382a;stroke-width:1.4}
+    .wire{stroke:#6e6557;stroke-width:1.3;fill:none;marker-end:url(#arr)}
+    .wireR{stroke:#b5382a;stroke-width:1.3;fill:none;marker-end:url(#arrR);stroke-dasharray:5 4}
+  </style>
+
+  <text x="40" y="38" class="kick">ONE JOB, END TO END</text>
+
+  <!-- brief -->
+  <rect x="40" y="70" width="190" height="96" rx="10" class="pane"/>
+  <text x="62" y="102" class="lbl">the brief</text>
+  <text x="62" y="124" class="meta">task + definition of done,</text>
+  <text x="62" y="141" class="meta">sent over Telegram</text>
+
+  <!-- runtime pool -->
+  <rect x="310" y="52" width="280" height="252" rx="12" fill="none" stroke="#d6cfc0" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="332" y="80" class="meta">any capable runtime</text>
+  <rect x="332" y="94" width="236" height="40" rx="8" class="pane"/>
+  <text x="350" y="119" class="lbl">Claude Code</text>
+  <rect x="332" y="142" width="236" height="40" rx="8" class="pane"/>
+  <text x="350" y="167" class="lbl">Hermes</text>
+  <rect x="332" y="190" width="236" height="40" rx="8" class="pane"/>
+  <text x="350" y="215" class="lbl">Codex</text>
+  <rect x="332" y="238" width="236" height="40" rx="8" class="pane"/>
+  <text x="350" y="263" class="lbl">Kimi</text>
+  <path class="wireR" d="M580 114 C606 122 606 150 580 160"/>
+  <text x="612" y="140" class="metaR">quota hit →</text>
+  <text x="612" y="156" class="metaR">brief moves,</text>
+  <text x="612" y="172" class="metaR">intact</text>
+
+  <!-- work loop -->
+  <rect x="730" y="70" width="430" height="96" rx="10" class="pane"/>
+  <text x="752" y="102" class="lbl">implement → test → verify → ship</text>
+  <text x="752" y="124" class="meta">a second agent reviews adversarially;</text>
+  <text x="752" y="141" class="meta">an unverified claim is a lie</text>
+
+  <path class="wire" d="M230 118 L302 118"/>
+  <path class="wire" d="M598 118 L722 118"/>
+
+  <!-- vault -->
+  <rect x="310" y="380" width="580" height="110" rx="10" class="paneR"/>
+  <text x="332" y="412" class="lbl">shared vault</text>
+  <text x="332" y="434" class="meta">working notes with TTLs · build notes for settled decisions ·</text>
+  <text x="332" y="451" class="meta">red lines (never publish topology, never expose private data)</text>
+  <text x="332" y="473" class="metaR">last duty of every job: update the note the next agent reads</text>
+
+  <path class="wire" d="M450 372 L450 312"/>
+  <path class="wire" d="M470 312 L470 372"/>
+  <path class="wire" d="M945 174 C945 300 900 380 892 384"/>
+  <text x="962" y="300" class="meta">write the note</text>
+
+  <!-- cron -->
+  <rect x="40" y="380" width="190" height="110" rx="10" class="pane"/>
+  <text x="62" y="412" class="lbl">cron loops</text>
+  <text x="62" y="434" class="meta">standing monitors surface</text>
+  <text x="62" y="451" class="meta">state-changes only —</text>
+  <text x="62" y="468" class="meta">quiet days are silent</text>
+  <path class="wire" d="M135 372 C135 220 220 130 302 122"/>
+  <text x="150" y="250" class="meta">jobs arrive on a schedule too</text>
+</svg>

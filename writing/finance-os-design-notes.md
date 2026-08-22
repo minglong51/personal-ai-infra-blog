@@ -1,7 +1,7 @@
 ---
 title: "finance-os: a decision system, not a stock picker"
 date: 2026-07-24
-readingMinutes: 6
+readingMinutes: 3
 summary: A personal investment platform that scores a ~70-name universe on 11 LLM-graded dimensions, blends probability-weighted scenarios, and treats the kill trigger as a first-class object — the design notes.
 syndicate: [substack, x]
 canonical: https://www.minglongpan.com/writing/finance-os-design-notes

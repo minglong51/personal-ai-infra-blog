@@ -1,7 +1,7 @@
 ---
 title: Persona-routed agent tooling: one stdio server, every team's capabilities
 date: 2026-07-24
-readingMinutes: 6
+readingMinutes: 4
 summary: A semantic router that reads the task or todo list, routes to persona → skills → tools, and auto-loads team resource packages — one stdio binary that works with any CLI or agentic tooling, with team behavior living in its own JSON config.
 syndicate: [substack, x]
 canonical: https://www.minglongpan.com/writing/mcp-resource-layering-pattern
@@ -28,6 +28,8 @@ task / todos  →  router (semantic, keyword-based)  →  persona  →  skills  
 The practical effect: **team shared resources load automatically based on the task.** An engineer doesn't need to know which persona to invoke or which env var to set — they describe the work, and the router pulls in the right team's package. The server starts nearly empty; only what the chain selects ever exists for that process.
 
 And because the router operates at the task level rather than the host level, the design is **generic across any CLI or agentic tooling** — the same routing works whether the consumer is an MCP host, a plain CLI, or another agent framework. The MCP server is one skin over the pipeline, not the point of it.
+
+![The routing chain per request: the task's own words hit a deterministic keyword router, which assembles the org package, the owning team's package, and that team's config — data, not code. A miss routes to the generic org persona, never to a guess.](img/posts/mcp-resource-layering-pattern-chain.svg)
 
 ## Resources as packages
 

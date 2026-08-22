@@ -1,7 +1,7 @@
 ---
 title: How I run a personal agent fleet
 date: 2026-07-24
-readingMinutes: 8
+readingMinutes: 5
 summary: Runtime-agnostic agents on Telegram — Claude Code, Hermes, Codex, Kimi as interchangeable labor — with a shared knowledge memory, cron-driven loops, and a rule that everything the fleet ships gets verified before it's claimed.
 syndicate: [substack, x]
 canonical: https://www.minglongpan.com/writing/how-i-run-a-personal-agent-fleet
@@ -30,6 +30,8 @@ This matters for the same reason multi-tenant serving abstractions matter at wor
 The recent site redesign, compressed: I described a direction in one message. The fleet explored the existing codebase, generated a dozen design mocks across five rounds of my rejections, ran external persona reviews against the candidates (a principal-engineer lens, an infrastructure-engineer lens), implemented the winner as a single-page document, dogfooded it at two viewports with a headless browser, deployed it, and verified the production chunks byte-for-byte. My involvement was taste and judgment calls; everything else was the fleet. Then, when reviewers said the site claimed more systems than it proved, the same loop produced a guest mode for my pet project — exploration, privacy design, implementation, twelve new tests, production deploy — turning one of those claims into a link anyone can click.
 
 The pattern to notice: the work is boring on purpose. Brief → implement → test → verify → ship → write the note. The magic is not any agent being smart; it's the loop being honest.
+
+![One job, end to end: a brief with a definition of done enters a pool of interchangeable runtimes, the work loop verifies adversarially before shipping, and everything reads and writes the same vault. When a runtime hits its quota, the brief moves — intact.](img/posts/how-i-run-a-personal-agent-fleet-loop.svg)
 
 ## The numbers, one audit in
 
