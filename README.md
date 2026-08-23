@@ -1,4 +1,4 @@
-# personal-ai-infra-blog
+# writing
 
 Mirrors of my writing on personal AI infrastructure — agent fleets, deterministic LLM
 workflows, attention design, local model serving — plus the configs those posts reference.
