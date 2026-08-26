@@ -1,8 +1,11 @@
 ---
 title: How I run a personal agent fleet
 date: 2026-07-24
+updated: 2026-08-26
 readingMinutes: 5
 summary: Runtime-agnostic agents on Telegram — Claude Code, Hermes, Codex, Kimi as interchangeable labor — with a shared knowledge memory, cron-driven loops, and a rule that everything the fleet ships gets verified before it's claimed.
+cover: img/posts/how-i-run-a-personal-agent-fleet-cover.png
+coverAlt: "Four rail lines carrying different loads converge at one illuminated inspection station before an outbound package."
 syndicate: [substack, x]
 canonical: https://www.minglongpan.com/writing/how-i-run-a-personal-agent-fleet
 ---
@@ -31,7 +34,7 @@ The recent site redesign, compressed: I described a direction in one message. Th
 
 The pattern to notice: the work is boring on purpose. Brief → implement → test → verify → ship → write the note. The magic is not any agent being smart; it's the loop being honest.
 
-![One job, end to end: a brief with a definition of done enters a pool of interchangeable runtimes, the work loop verifies adversarially before shipping, and everything reads and writes the same vault. When a runtime hits its quota, the brief moves — intact.](img/posts/how-i-run-a-personal-agent-fleet-loop.svg)
+![Shared memory produces a durable job brief, a runtime router sends it to Claude Code, Hermes, Codex, or Kimi, and every path converges on independent verification before the human review queue and shipping.](img/posts/how-i-run-a-personal-agent-fleet-operations.png)
 
 ## The numbers, one audit in
 
